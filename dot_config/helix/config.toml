@@ -1,0 +1,77 @@
+
+
+
+# theme = "onedarker"
+# theme = "rose_pine"
+theme = "dracula"
+# theme = "fleet_dark"
+# theme = "kanagawa"
+# theme = "tokyonight"
+
+[editor]
+true-color = true
+bufferline = "multiple"
+auto-save = true
+
+[editor.statusline]
+left = ["mode", "spinner", "diagnostics"]
+center = ["file-name"]
+right = ["selections", "position", "file-type"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.indent-guides]
+render = false
+# indent-style = 4
+
+[editor.soft-wrap]
+enable = true
+
+[editor.lsp]
+display-messages = true
+# display-inlay-hints = true # not sure what this does?
+
+[keys.normal]
+q = "move_prev_word_start" # q goes left word on line with w e
+Q = "extend_prev_word_start"
+b = "replay_macro"
+B = "record_macro"
+
+# kakoune continue selections
+H = "extend_char_left"
+L = "extend_char_right"
+
+# buffer switching 
+# G = "buffer_"
+
+
+# X goes up
+X = "extend_line_above"
+
+# D deletes backwards
+D = "delete_char_backward"
+
+# enter key goes to line down
+# ret = ["move_line_down", "goto_first_nonwhitespace"]
+"ret" = ["open_below", "normal_mode"]
+# "C-ret" = ["open_above", "normal_mode"]  # doesnt work :(
+
+# dont work, tmux?
+C-h = "jump_view_left" 
+C-l = "jump_view_right"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+
+[keys.normal.space]
+c = ":buffer-close"
+q = ":quit"
+w = ":write"
+# v = ":"  # open window, C-w
+
+
+[keys.insert]
+j = { k = "normal_mode" } # jk to exit

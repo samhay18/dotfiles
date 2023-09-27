@@ -1,0 +1,14 @@
+
+
+[[language]]
+name = "python"
+config = { pylsp.plugins.pycodestyle.ignore = ["E501", "W292"] }
+# config = { pylsp.plugins.pycodestyle}
+
+[[language]]
+name = "c"
+indent = { tab-width = 4, unit = " " }
+
+[[language]]
+language-server = { command = "svelteserver", args = ["--stdio"], root = ".", initializationOptions = {}, first_match = [], single_file_support = true }
+name = "svelte"
