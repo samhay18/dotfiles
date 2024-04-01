@@ -4,19 +4,22 @@
 # theme = "onedarker"
 # theme = "rose_pine"
 theme = "dracula"
+# theme = "dracula_at_night"
 # theme = "fleet_dark"
 # theme = "kanagawa"
 # theme = "tokyonight"
 
 [editor]
+line-number = "relative"
 true-color = true
 bufferline = "multiple"
 auto-save = true
+color-modes = true
 
 [editor.statusline]
 left = ["mode", "spinner", "diagnostics"]
 center = ["file-name"]
-right = ["selections", "position", "file-type"]
+right = ["selections", "position", "file-type", "version-control"]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
@@ -26,7 +29,6 @@ insert = "bar"
 
 [editor.indent-guides]
 render = false
-# indent-style = 4
 
 [editor.soft-wrap]
 enable = true
@@ -46,7 +48,10 @@ H = "extend_char_left"
 L = "extend_char_right"
 
 # buffer switching 
-# G = "buffer_"
+"A-," = "goto_previous_buffer"
+"A-." = "goto_next_buffer"
+"A-/" = "repeat_last_motion"
+# A-w = ":buffer_close"
 
 
 # X goes up
@@ -75,3 +80,9 @@ w = ":write"
 
 [keys.insert]
 j = { k = "normal_mode" } # jk to exit
+
+[keys.normal."+"]
+m = ":run-shell-command make"
+c = ":run-shell-command make clean"
+r = ":run-shell-command ./bin/program"
+
